@@ -1,7 +1,6 @@
 baseURL: "https://jumpbrain.github.io/page/"
 title: Jumpbrain
 theme: ["PaperMod"]
-canonifyURLs: true
 languageCode: en-us
 
 
@@ -44,17 +43,19 @@ params:
 
 menu:
   main:
-    - identifier: categories
-      name: Categories
-      url: /categories
-    - identifier: tags
-      name: Tags
-      url: /tags
-#      pageRef: /tags
-    - identifier: about
-      name: About
-      url: /about
-#      pageRef: /about
     - identifier: archives
       name: Archives
-      url: /archives
+      pageRef: /archives/
+      weight: 10
+    - identifier: categories
+      name: Categories
+      pageRef: /categories/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      pageRef: /tags/
+      weight: 30
+    - identifier: about
+      name: About
+      pageRef: /about/
+      weight: 40
