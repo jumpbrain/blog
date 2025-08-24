@@ -1,7 +1,7 @@
 baseURL: "https://jumpbrain.github.io/page/"
 title: Jumpbrain
 copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
-theme: [hugo-PaperMod]
+theme: ["PaperMod"]
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
