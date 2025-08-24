@@ -1,3 +1,4 @@
-baseURL: https://example.org/
+baseURL: https://jumpbrain.github.io/page/
 languageCode: en-us
-title: My New Hugo Site
+title: Jumpbrain
+theme: PaperMod
