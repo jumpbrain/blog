@@ -37,7 +37,8 @@ params:
 #      url: "index.xml"
     - name: email
       url: "mailto:00858854@proton.me"
-
+    - name: key
+      url: "https://www.youtube.com/watch?v=yJ0UUeq7v6Q&t=0s"
     - name: key
       url: "https://www.youtube.com/watch?v=H2PZRKqbOUE"
 
