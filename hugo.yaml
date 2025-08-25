@@ -44,10 +44,11 @@ params:
 
 menu:
   main:
-    - identifier: archives
-      name: Archives
-      pageRef: /archives/
-      weight: 10
+    - identifier: home
+      name: Home
+      pageRef: /
+      weight: 1
+  
     - identifier: categories
       name: Categories
       pageRef: /categories/
@@ -60,3 +61,7 @@ menu:
       name: About
       pageRef: /about/
       weight: 40
+    - identifier: archives
+      name: Archives
+      pageRef: /archives/
+      weight: 10
