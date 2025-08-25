@@ -25,16 +25,8 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/jumpbrain"
-#    - name: x
-#      url: "https://x.com/your-handle"
-#    - name: dev
-#      url: "https://dev.to/your-handle"
     - name: medium
       url: "https://medium.com/@jumpbrain"
-#    - name: linkedin
-#      url: "https://www.linkedin.com/in/your-handle"
-#    - name: rss
-#      url: "index.xml"
     - name: email
       url: "mailto:00858854@proton.me"
     - name: key
