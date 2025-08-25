@@ -1,6 +1,6 @@
 ---
 date: "2025-08-23T17:50:00+02:00"
-draft: false
+draft: true
 title: 'First'
 tags: ["orderflow", "psychology"]
 categories: ["trading", "research"]
