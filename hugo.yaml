@@ -15,7 +15,7 @@ params:
   ShowBreadcrumbs: true
 
   homeInfoParams:
-    Title: "BUILD | BRAKE"
+    Title: "BUILD | BREAK"
     Content: >-
       Insights and tangents from data science, cybersecurity and trading.
       My [Proton](mailto:00858854@proton.me) is open for questions.
