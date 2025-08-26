@@ -12,6 +12,7 @@ params:
   DisableHomeInfo: false
   mainSections: ["posts"]
 #  ShowBreadcrumbs: true
+  ShowReadingTime: true
   math: true
   homeInfoParams:
     Title: "BUILD | BREAK"
