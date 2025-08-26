@@ -11,14 +11,22 @@ taxonomies:
 params:
   DisableHomeInfo: false
   mainSections: ["posts"]
-
   ShowBreadcrumbs: true
-
+  math: true
   homeInfoParams:
     Title: "BUILD | BREAK"
     Content: >-
       Insights and tangents from data science, cybersecurity and trading.
       My [Proton](mailto:00858854@proton.me) is open for questions.
+  pygmentsUseClasses: false
+  
+
+markup:
+  highlight:
+    codeFences: true
+    noClasses: true
+    style: tango
+# https://xyproto.github.io/splash/docs/all.html
 
 
  # icons shown under the header (and also available in the navbar)
