@@ -22,7 +22,7 @@ To make my prediction I borrowed a method from Bruno B. de Mesquitas book 'The p
 
 **Step 1:** Identify all possible outcomes for actors and place them on a numbers line, e.g from 0 to 100, as a ruler.  
 
-**Step 2:** Having identified all the actors involved in the process of interest, assign values between 0 and 100 for three attributes: $Influence$, how much influence each actor could use to get what they want. $Salience$, how much each actor cares about the issue. The $\text{Ideal point}$, the ideal outcome (using our ruler from the previous step) for each actor. 
+**Step 2:** Having identified all the actors involved, assign values between 0 and 100 for three attributes: $Influence$, how much influence each actor could use to get what they want. $Salience$, how much each actor cares about the issue. The $\text{Ideal point}$, the ideal outcome (using our ruler from the previous step) for each actor. 
 
 *Caveat: If you subscribe to Ground News or similar you will likely be able to figure out the actors and assign these numbers on your own. If you cannot figure out the actors and assign these values: Do resist the temptation to ask a famous chatbot and go find an actual human expert made of flesh. **This will save you money** as you know they're using said chatbot to answer your question.* 
 
@@ -31,7 +31,7 @@ To make my prediction I borrowed a method from Bruno B. de Mesquitas book 'The p
 
 ### Results
 
-For this scenario I did the following:
+Let's try it:
 
 **Step 1:**
 
