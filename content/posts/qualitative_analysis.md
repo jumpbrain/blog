@@ -1,11 +1,11 @@
 ---
 date: '2025-08-26T17:12:11+02:00'
-draft: true
-title: 'Data Science at War: Part 1'
+draft: false
+title: 'Data Scientist at War: Part 1'
 description: 'A useful thought model.'
 tags: ["Useful thought model"]
 categories: ["Data Science"]
-comments: true
+# comments: true
 ---
 
 ### Introduction
@@ -15,72 +15,64 @@ In early spring 2022 I made a prediction:
 
 > The Russo-Ukrainian war will not end in russias favour. The invasion will deteriorate into territorial battles raging indifinetly **given the same engagement from the west and the east.**
 
-A bold claim at the time as many experts thought that Russia would conquer Ukraine in a matter of days or weeks. By now we know that didn't come to pass. Sidenote: Tetlock P.E (källa) found that experts tend to be as good as non-experts on average when trying to predict what will come to pass. He also found that predictioneers using theoretical models of the world perform just as poorly or worse. I know what you're thinking: "Time to bring out the (o.g) one fair coin!". Maybe not yet... 
+A bold claim at the time as many experts thought that Russia would conquer Ukraine in a matter of days or weeks. By now we know that didn't come to pass. Sidenote: Tetlock, P. E., & Gardner, D. (2015) found that experts tend to be as good as non-experts on average when trying to predict what will come to pass. He also found that predictioneers using theoretical models of the world perform just as poorly or worse. I know what you're thinking: "Time to bring out the (o.g) one fair coin!". Hold that thought... 
 
 ### Method
-To make my prediction I borrowed a method from Bruno B. de Mesquitas book The predictioneer's game (källa). This method can boost your qualitative conditional predictions. Meaning, qualitative predictions that end with "...given [insert your constraint]". 
+To make my prediction I borrowed a method from Bruno B. de Mesquitas book 'The predictioneer's game' (2009). This method can boost your qualitative conditional predictions. Meaning, qualitative predictions that end with "...given [insert your constraint]". Here's the blueprint:
 
-**Step 1:** Identify all possible outcomes for actors and place them on a numbers line, e.g from 0 to 100.  
+**Step 1:** Identify all possible outcomes for actors and place them on a numbers line, e.g from 0 to 100, as a ruler.  
 
-**Step 2:** Identify all the actors involved in the process of interest and assign values between 0 and 100 for these three attributes: $Influence$, how much power each actor could use to get what they want. $Salience$, how much each actor cares about the issue. $Ideal$, the ideal outcome (using the numbers line from the previous step) for each actor. 
+**Step 2:** Having identified all the actors involved in the process of interest, assign values between 0 and 100 for three attributes: $Influence$, how much influence each actor could use to get what they want. $Salience$, how much each actor cares about the issue. The $\text{Ideal point}$, the ideal outcome (using our ruler from the previous step) for each actor. 
 
-*Caveat: If you subscribe to Ground News or similar you will likely be able to figure out the actors and assign these numbers on your own. If you cannot figure out the actors and assign these values: Do resist the temptation to ask a famous chatbot and go find an actual human expert made out of flesh. This will save you money as you know they are using said chatbot to answer your question. If you already subscribe, then use your own I guess...* 
+*Caveat: If you subscribe to Ground News or similar you will likely be able to figure out the actors and assign these numbers on your own. If you cannot figure out the actors and assign these values: Do resist the temptation to ask a famous chatbot and go find an actual human expert made of flesh. **This will save you money** as you know they're using said chatbot to answer your question.* 
 
-**Step 3:** Produce a weighted average of ideal point, weighted by power. Where, $Power = Salince \\cdot Influence$. 
+**Step 3:** Produce a weighted average of $\text{Ideal point}$, weighted by $Power$. Where, $Power = Salince \\cdot Influence$. 
 
 
 ### Results
 
-#### Step 1:
+For this scenario I did the following:
+
+**Step 1:**
+
+**0:** Ukraine becomes a fully fledged member of NATO. 
+
+**15:** Ukraine joins the EU.
+
+**35:** Ukraine regains control with foreign policy autonomy.
+
+**50:** Russia gets the Russian areas but looses influence over Ukraine.
+
+**65:** Russia retains nominal control over a territorially unstable Ukraine.
+
+**85:** Russia turns Ukraine into a puppet (gets russian areas and retains influnce over the rest).
+
+**100:** Russia takes all of Ukraine.
+
+*Caveat: There are multiple possible rulers.* 
 
 
-# remove boxes
+**Step 2:** 
 
-{{< highlight r >}}
+**Russia**, had and still has large influence in european bordering nations; I put Russian influence at 80. They cared a lot and for leadership one could argue that the outcome was existential, not for the population as a whole; I put salience at 95. Their ideal point was obviously 100 spouting that Ukraine in some distant history had been part of an early Russia making it somehow still russian.  
 
-# Russia
-Influence: 80 # had large influence.
-Salience: 95 # cared a lot, existential for leadership but not populace as whole.
-Ideal point: 100 # wanted all of it.
+> Influence: 80,
+> Salience: 95,
+> Ideal point: 100. 
 
+**The west**, refering to meaningful western coalitions e.g EU and NATO, is influential. However, it is a coalition with idiosyncratic interests within. Supply chain is a steeper challenge for the west compared to Russia. Because of all this I put the west at a 60 for influence. I put Western salience at 70. Ukraine was a near EU state before the invasion but still had issues with corruption etc. To maintain that the ideal point for the West would be around 25. 
 
-# The West/Nato (U.S)/Europe
-Influence: 60 # powerful, not at border, supply challegens, leadership challenges coalition. 
-Salience: 70 # US had many competing interests but european nations very interested.
-Ideal point: 25 # Ukraine was a near EU state but issues with corruption, etc. 
+> Influence: 60, 
+> Salience: 70, 
+> Ideal point: 25.
+ 
+**Ukraine**, is not very influential, influence at 25. Cares a lot, more than Russia, completely existential, salience at 100. Wants autonomy and peace, ideal point 100. 
 
-# Ukraine
-Influence: 25 # not very powerful but at home turf.
-Salience: 100 # cares a lot, existential.
-Ideal point: 100 # wants autonomy and peace.
+> Influence: 25,
+> Salience: 100,
+> Ideal point: 0.
 
-{{< /highlight >}}
-
-
-#### Step 2: 
-
-{{< highlight r >}}
-
-0: Ukraine becomes a fully fledged member of NATO 
-
-15: Ukraine joins the EU
-
-35: Ukraine regains control with foreign policy autonomy 
-
-50: Russia gets the Russian areas but looses influence over Ukraine
-
-65: Russia retains nominal control over a territorially unstable Ukraine
-
-85: Russia turns Ukraine into a puppet (gets russian areas and retains influnce over the rest)
-
-100: Russia takes all of Ukraine
-
-{{< /highlight >}}
-
-*Caveat: There are mulitple possible continuums here.* 
-
-
-#### Step 3:
+**Step 3:**
 
 We find $Power$ for each actor respectively, where $Power = Salince \\cdot Influence$:
 
@@ -90,27 +82,34 @@ $$Power\_{West} = 60 \\cdot 70 = 4200$$
 
 $$Power\_{Ukraine} = 25 \\cdot 100 = 2500$$
 
+Then, we find a **weighted average** of $\text{Ideal point}$, weighted by power:
+
 $$Power\_{Total} = 7600 + 4200 + 2500 = 14300$$
 
-Then, we find a **weighted average** of ideal point, weighted by power:
+$$\frac{(\text{Ideal point}\_{Russia} \\cdot Power\_{Russia}) + (\text{Ideal point}\_{West} \\cdot Power\_{West}) + (\text{Ideal point}\_{Ukraine} \\cdot Power\_{Ukraine})}{Power\_{Total}} = $$
 
 $$\frac{(100 \\cdot 7600) + (25 \\cdot 4200) + (0 \\cdot 2500)}{14300} = 60.5 $$
 
-This puts us in between a scenario where Russia gets the Russian areas but looses influence over Ukraine and Russia retains nominal control over a territorially unstable Ukraine. 
+This puts the weighted average ideal point in between a scenario where Russia gets the Russian areas but looses influence over Ukraine and a scenario where Russia retains nominal control over a territorially unstable Ukraine. 
 
 ### Conclusion
 > The Russo-Ukrainian war will not end in russias favour. The invasion will deteriorate into territorial battles raging indifinetly given the same engagement from the west and the east.
 
-This prediction was made early spring 2022, what ensued after was increasing support for Ukraine from the west coupled with moral decline within the russian ranks. Today we're proably sitting at a soft sub 60's. Do you agree? Try this method out for yourself!   
+This prediction was made early spring 2022, what ensued after was increasing support for Ukraine from the west coupled with moral decline within the russian ranks. Today we're proably sitting at a soft sub 60's, **do you agree?**
 
-Why where do experts get it wrong? I don't know. Maybe they tried using past or similar examples to see through extreme complexity rather than stepping back to look at the bigger picture.
+Why do experts get it wrong? I don't know. Maybe they tried extrapolating from past or similar examples to see through extreme complexity rather than stepping back to look at the bigger picture. Maybe they forgot that one should always carry one fair coin. Maybe I got lucky. 
 
-Where do we go from here?
+I would like to end with a stark reminder, that **these estimates are not evidence driven, they are driven by our own assumptions**. If we're biased in any direction the numbers will reflect that. By adding complexity to our beliefs I think we're at the risk of interpreting emotional padding as evidence. Nontheless, this is a feasible method for producing a weighted belief, should you insist!
 
-In the next post I'll incorporate some priors to incorporate uncertainty regarding the salience, influence and power of involved actors when using this method. 
+In the next post I'll probably write something about curating security situation related text for fine-tuning a large language model (llm), or something along those lines. Then I'll create some retrieval augmented generation, vector based and graph based, using security related text. Then I'll likely move into something more tangible, e.g cybersecurity and the NIST frameworks. 
 
-In the post after that I'll probably use this as a base case to produce competing hypo's. 
+Meet you there!
 
-Then I'll create a post about curating security situation related text for fine-tuning an LLM. 
+### References
+Tetlock, P. E., & Gardner, D. (2015). Superforecasting: The Art and Science of Prediction.
+Mesquita, Bruce B. (2009). The Predictioneer's Game: Using the Logic of Brazen Self-Interest to See and Shape the Future.
 
+More reading:
 
+Tetlock, P. E., & Gardner, D. (2015). Sharpening Your Forecasting Skills.
+Tetlock, P. E. (1999). Theory-driven reasoning about plausible pasts and probable futures in world politics: are we prisoners of our preconceptions?. American Journal of Political Science, 335-366.
