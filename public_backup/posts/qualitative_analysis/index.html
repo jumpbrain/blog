@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Data Scientist at War: Part 1 | Jumpbrain</title>
+<meta name="keywords" content="Useful thought model">
+<meta name="description" content="A useful thought model.">
+<meta name="author" content="">
+<link rel="canonical" href="https://jumpbrain.github.io/page/posts/qualitative_analysis/">
+<link crossorigin="anonymous" href="/page/assets/css/stylesheet.a5781257de4197b8e3d54346acdf1dd55a9ba4cb91dcace192fc1baf228c08b5.css" integrity="sha256-pXgSV95Bl7jj1UNGrN8d1VqbpMuR3KzhkvwbryKMCLU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://jumpbrain.github.io/page/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://jumpbrain.github.io/page/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://jumpbrain.github.io/page/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://jumpbrain.github.io/page/apple-touch-icon.png">
+<link rel="mask-icon" href="https://jumpbrain.github.io/page/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://jumpbrain.github.io/page/posts/qualitative_analysis/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://jumpbrain.github.io/page/posts/qualitative_analysis/">
+  <meta property="og:site_name" content="Jumpbrain">
+  <meta property="og:title" content="Data Scientist at War: Part 1">
+  <meta property="og:description" content="A useful thought model.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-08-26T17:12:11+02:00">
+    <meta property="article:modified_time" content="2025-08-26T17:12:11+02:00">
+    <meta property="article:tag" content="Useful Thought Model">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data Scientist at War: Part 1">
+<meta name="twitter:description" content="A useful thought model.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://jumpbrain.github.io/page/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Data Scientist at War: Part 1",
+      "item": "https://jumpbrain.github.io/page/posts/qualitative_analysis/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Data Scientist at War: Part 1",
+  "name": "Data Scientist at War: Part 1",
+  "description": "A useful thought model.",
+  "keywords": [
+    "Useful thought model"
+  ],
+  "articleBody": "Introduction As a data scientist you must be able to navigate situations that don’t easily lend themselves to quantitative modelling. Sometimes simple heuristics can remove the need for a model altogether. Yes, really. Sometimes you are best of with a qualitative approach.\nIn early spring 2022 I made a prediction:\nThe Russo-Ukrainian war will not end in Russia’s favour. The invasion will deteriorate into territorial battles raging indifinetly given the same engagement from the west and the east.\nA bold claim at the time as many experts thought that Russia would conquer Ukraine in a matter of days or weeks. By now we know that didn’t come to pass. Sidenote: Tetlock, P. E., \u0026 Gardner, D. (2015) found that experts tend to be as good as non-experts on average when trying to predict what will come to pass. He also found that predictioneers using theoretical models of the world perform just as poorly or worse. I know what you’re thinking: “Time to bring out the (o.g) one fair coin!”. Hold that thought…\nMethod To make my prediction I borrowed a method from Bruno B. de Mesquitas book ‘The predictioneer’s game’ (2009). This method can boost your qualitative conditional predictions. Meaning, qualitative predictions that end with “…given [insert your constraint]”. Here’s the blueprint:\nStep 1: Identify all possible outcomes for actors and place them on a numbers line, e.g from 0 to 100, as a ruler.\nStep 2: Having identified all the actors involved, assign values between 0 and 100 for three attributes: $Influence$, how much influence each actor could use to get what they want. $Salience$, how much each actor cares about the issue. The $\\text{Ideal point}$, the ideal outcome (using our ruler from the previous step) for each actor.\nCaveat: If you subscribe to Ground News or similar you’ll likely be able to figure out the actors and assign these numbers on your own. If you can’t figure out the actors and assign these values: Do resist the temptation to ask a famous chatbot and go find an actual human expert made of flesh. This will save you money as you know they’re using said chatbot to answer your question.\nStep 3: Produce a weighted average of $\\text{Ideal point}$, weighted by $Power$. Where, $Power = Salince \\cdot Influence$.\nResults Let’s try it:\nStep 1:\n0: Ukraine becomes a fully fledged member of NATO.\n15: Ukraine joins the EU.\n35: Ukraine regains control with foreign policy autonomy.\n50: Russia gets the Russian areas but looses influence over Ukraine.\n65: Russia retains nominal control over a territorially unstable Ukraine.\n85: Russia turns Ukraine into a puppet (gets Russian areas and retains influnce over the rest).\n100: Russia takes all of Ukraine.\nCaveat: There are multiple possible rulers.\nStep 2:\nRussia, had and still has large influence in european bordering nations; I put Russian influence at 80. They cared a lot and for the Russian leadership one could argue that the outcome was existential, although not for the population as a whole; I put salience at 95. Their ideal point was obviously 100, Russian leadership spouting that Ukraine in some distant history had been part of an early Russia making it somehow still Russian.\nInfluence: 80, Salience: 95, Ideal point: 100.\nThe west, refering to meaningful western coalitions e.g EU and NATO, is influential. However, it’s a coalition with idiosyncratic interests within. Supply chain is a steeper challenge for the west compared to Russia. Because of all this I put the west at a 60 for influence. I put Western salience at 70. Ukraine was a near EU state before the invasion but still had issues with corruption etc. To maintain that the ideal point for the west would be around 25.\nInfluence: 60, Salience: 70, Ideal point: 25.\nUkraine, is not very influential, influence at 25. Cares a lot, more than Russia, completely existential, salience at 100. Wants autonomy and peace, ideal point 0.\nInfluence: 25, Salience: 100, Ideal point: 0.\nStep 3:\nWe find $Power$ for each actor respectively, where $Power = Salince \\cdot Influence$:\n$$Power_{Russia} = 80 \\cdot 95 = 7600$$\n$$Power_{West} = 60 \\cdot 70 = 4200$$\n$$Power_{Ukraine} = 25 \\cdot 100 = 2500$$\nThen, we find a weighted average of $\\text{Ideal point}$, weighted by power:\n$$Power_{Total} = 7600 + 4200 + 2500 = 14300$$\n$$\\frac{(\\text{Ideal point}_{Russia} \\cdot Power_{Russia}) + (\\text{Ideal point}_{West} \\cdot Power_{West}) + (\\text{Ideal point}_{Ukraine} \\cdot Power_{Ukraine})}{Power_{Total}} = $$\n$$\\frac{(100 \\cdot 7600) + (25 \\cdot 4200) + (0 \\cdot 2500)}{14300} = 60.5 $$\nThis puts the weighted average ideal point in between a scenario where Russia gets the Russian areas but looses influence over Ukraine and a scenario where Russia retains nominal control over a territorially unstable Ukraine.\nConclusion The Russo-Ukrainian war will not end in Russia’s favour. The invasion will deteriorate into territorial battles raging indifinetly given the same engagement from the west and the east.\nThis prediction was made early spring 2022, what ensued after was increasing support for Ukraine from the west coupled with declining morale within the Russian ranks. Today we’re proably sitting at a soft sub 60’s, do you agree?\nWhy do experts get it wrong? I don’t know. Maybe they tried extrapolating from past or similar examples to see through extreme complexity rather than stepping back to look at the bigger picture. Maybe I got lucky. It would behoove one to never forget that one should always carry one fair coin.\nI would like to end with a stark reminder, that these estimates are not evidence driven, they are driven by our own assumptions. If we’re biased in any direction the numbers will reflect that. By adding complexity to our beliefs I think we’re at the risk of interpreting emotional padding as evidence. Nontheless, this is a feasible method for producing a weighted belief, should you insist!\nIn the next post I’ll probably write something about curating security situation related text for fine-tuning a large language model (llm), or something along those lines. Then I’ll write about retrieval augmented generation, vector based and graph based, using security related text. Then I’ll likely move into something more tangible, e.g cybersecurity and the NIST frameworks.\nMeet you there!\nReferences Tetlock, P. E., \u0026 Gardner, D. (2015). Superforecasting: The Art and Science of Prediction. Mesquita, Bruce B. (2009). The Predictioneer’s Game: Using the Logic of Brazen Self-Interest to See and Shape the Future.\nMore reading:\nTetlock, P. E., \u0026 Gardner, D. (2015). Sharpening Your Forecasting Skills. Tetlock, P. E. (1999). Theory-driven reasoning about plausible pasts and probable futures in world politics: are we prisoners of our preconceptions?. American Journal of Political Science, 335-366.\n",
+  "wordCount" : "1100",
+  "inLanguage": "en",
+  "datePublished": "2025-08-26T17:12:11+02:00",
+  "dateModified": "2025-08-26T17:12:11+02:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://jumpbrain.github.io/page/posts/qualitative_analysis/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Jumpbrain",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jumpbrain.github.io/page/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://jumpbrain.github.io/page/" accesskey="h" title="Jumpbrain (Alt + H)">Jumpbrain</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://jumpbrain.github.io/page/" title="Jumpbrain">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jumpbrain.github.io/page/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jumpbrain.github.io/page/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jumpbrain.github.io/page/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://jumpbrain.github.io/page/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Data Scientist at War: Part 1
+    </h1>
+    <div class="post-description">
+      A useful thought model.
+    </div>
+    <div class="post-meta"><span title='2025-08-26 17:12:11 +0200 CEST'>August 26, 2025</span>&nbsp;·&nbsp;<span>6 min</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="introduction">Introduction<a hidden class="anchor" aria-hidden="true" href="#introduction">#</a></h3>
+<p>As a data scientist you must be able to navigate situations that don&rsquo;t easily lend themselves to quantitative modelling. Sometimes simple heuristics can remove the need for a model altogether. Yes, really. Sometimes you are best of with a qualitative approach.</p>
+<p>In early spring 2022 I made a prediction:</p>
+<blockquote>
+<p>The Russo-Ukrainian war will not end in Russia&rsquo;s favour. The invasion will deteriorate into territorial battles raging indifinetly <strong>given the same engagement from the west and the east.</strong></p></blockquote>
+<p>A bold claim at the time as many experts thought that Russia would conquer Ukraine in a matter of days or weeks. By now we know that didn&rsquo;t come to pass. Sidenote: Tetlock, P. E., &amp; Gardner, D. (2015) found that experts tend to be as good as non-experts on average when trying to predict what will come to pass. He also found that predictioneers using theoretical models of the world perform just as poorly or worse. I know what you&rsquo;re thinking: &ldquo;Time to bring out the (o.g) one fair coin!&rdquo;. Hold that thought&hellip;</p>
+<h3 id="method">Method<a hidden class="anchor" aria-hidden="true" href="#method">#</a></h3>
+<p>To make my prediction I borrowed a method from Bruno B. de Mesquitas book &lsquo;The predictioneer&rsquo;s game&rsquo; (2009). This method can boost your qualitative conditional predictions. Meaning, qualitative predictions that end with &ldquo;&hellip;given [insert your constraint]&rdquo;. Here&rsquo;s the blueprint:</p>
+<p><strong>Step 1:</strong> Identify all possible outcomes for actors and place them on a numbers line, e.g from 0 to 100, as a ruler.</p>
+<p><strong>Step 2:</strong> Having identified all the actors involved, assign values between 0 and 100 for three attributes: $Influence$, how much influence each actor could use to get what they want. $Salience$, how much each actor cares about the issue. The $\text{Ideal point}$, the ideal outcome (using our ruler from the previous step) for each actor.</p>
+<p><em>Caveat: If you subscribe to Ground News or similar you&rsquo;ll likely be able to figure out the actors and assign these numbers on your own. If you can&rsquo;t figure out the actors and assign these values: Do resist the temptation to ask a famous chatbot and go find an actual human expert made of flesh. <strong>This will save you money</strong> as you know they&rsquo;re using said chatbot to answer your question.</em></p>
+<p><strong>Step 3:</strong> Produce a weighted average of $\text{Ideal point}$, weighted by $Power$. Where, $Power = Salince \cdot Influence$.</p>
+<h3 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h3>
+<p>Let&rsquo;s try it:</p>
+<p><strong>Step 1:</strong></p>
+<p><strong>0:</strong> Ukraine becomes a fully fledged member of NATO.</p>
+<p><strong>15:</strong> Ukraine joins the EU.</p>
+<p><strong>35:</strong> Ukraine regains control with foreign policy autonomy.</p>
+<p><strong>50:</strong> Russia gets the Russian areas but looses influence over Ukraine.</p>
+<p><strong>65:</strong> Russia retains nominal control over a territorially unstable Ukraine.</p>
+<p><strong>85:</strong> Russia turns Ukraine into a puppet (gets Russian areas and retains influnce over the rest).</p>
+<p><strong>100:</strong> Russia takes all of Ukraine.</p>
+<p><em>Caveat: There are multiple possible rulers.</em></p>
+<p><strong>Step 2:</strong></p>
+<p><strong>Russia</strong>, had and still has large influence in european bordering nations; I put Russian influence at 80. They cared a lot and for the Russian leadership one could argue that the outcome was existential, although not for the population as a whole; I put salience at 95. Their ideal point was obviously 100, Russian leadership spouting that Ukraine in some distant history had been part of an early Russia making it somehow still Russian.</p>
+<blockquote>
+<p>Influence: 80,
+Salience: 95,
+Ideal point: 100.</p></blockquote>
+<p><strong>The west</strong>, refering to meaningful western coalitions e.g EU and NATO, is influential. However, it&rsquo;s a coalition with idiosyncratic interests within. Supply chain is a steeper challenge for the west compared to Russia. Because of all this I put the west at a 60 for influence. I put Western salience at 70. Ukraine was a near EU state before the invasion but still had issues with corruption etc. To maintain that the ideal point for the west would be around 25.</p>
+<blockquote>
+<p>Influence: 60,
+Salience: 70,
+Ideal point: 25.</p></blockquote>
+<p><strong>Ukraine</strong>, is not very influential, influence at 25. Cares a lot, more than Russia, completely existential, salience at 100. Wants autonomy and peace, ideal point 0.</p>
+<blockquote>
+<p>Influence: 25,
+Salience: 100,
+Ideal point: 0.</p></blockquote>
+<p><strong>Step 3:</strong></p>
+<p>We find $Power$ for each actor respectively, where $Power = Salince \cdot Influence$:</p>
+<p>$$Power_{Russia} = 80 \cdot 95 = 7600$$</p>
+<p>$$Power_{West} = 60 \cdot 70 = 4200$$</p>
+<p>$$Power_{Ukraine} = 25 \cdot 100 = 2500$$</p>
+<p>Then, we find a <strong>weighted average</strong> of $\text{Ideal point}$, weighted by power:</p>
+<p>$$Power_{Total} = 7600 + 4200 + 2500 = 14300$$</p>
+<p>$$\frac{(\text{Ideal point}_{Russia} \cdot Power_{Russia}) + (\text{Ideal point}_{West} \cdot Power_{West}) + (\text{Ideal point}_{Ukraine} \cdot Power_{Ukraine})}{Power_{Total}} = $$</p>
+<p>$$\frac{(100 \cdot 7600) + (25 \cdot 4200) + (0 \cdot 2500)}{14300} = 60.5 $$</p>
+<p>This puts the weighted average ideal point in between a scenario where Russia gets the Russian areas but looses influence over Ukraine and a scenario where Russia retains nominal control over a territorially unstable Ukraine.</p>
+<h3 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h3>
+<blockquote>
+<p>The Russo-Ukrainian war will not end in Russia&rsquo;s favour. The invasion will deteriorate into territorial battles raging indifinetly given the same engagement from the west and the east.</p></blockquote>
+<p>This prediction was made early spring 2022, what ensued after was increasing support for Ukraine from the west coupled with declining morale within the Russian ranks. Today we&rsquo;re proably sitting at a soft sub 60&rsquo;s, <strong>do you agree?</strong></p>
+<p><strong>Why do experts get it wrong?</strong> I don&rsquo;t know. Maybe they tried extrapolating from past or similar examples to see through extreme complexity rather than stepping back to look at the bigger picture. Maybe I got lucky. It would behoove one to never forget that one should always carry one fair coin.</p>
+<p>I would like to end with a stark reminder, that <strong>these estimates are not evidence driven, they are driven by our own assumptions</strong>. If we&rsquo;re biased in any direction the numbers will reflect that. By adding complexity to our beliefs I think we&rsquo;re at the risk of interpreting emotional padding as evidence. Nontheless, this is a feasible method for producing a weighted belief, should you insist!</p>
+<p>In the next post I&rsquo;ll probably write something about curating security situation related text for fine-tuning a large language model (llm), or something along those lines. Then I&rsquo;ll write about retrieval augmented generation, vector based and graph based, using security related text. Then I&rsquo;ll likely move into something more tangible, e.g cybersecurity and the NIST frameworks.</p>
+<p>Meet you there!</p>
+<h3 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h3>
+<p>Tetlock, P. E., &amp; Gardner, D. (2015). Superforecasting: The Art and Science of Prediction.
+Mesquita, Bruce B. (2009). The Predictioneer&rsquo;s Game: Using the Logic of Brazen Self-Interest to See and Shape the Future.</p>
+<p>More reading:</p>
+<p>Tetlock, P. E., &amp; Gardner, D. (2015). Sharpening Your Forecasting Skills.
+Tetlock, P. E. (1999). Theory-driven reasoning about plausible pasts and probable futures in world politics: are we prisoners of our preconceptions?. American Journal of Political Science, 335-366.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://jumpbrain.github.io/page/tags/useful-thought-model/">Useful Thought Model</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://jumpbrain.github.io/page/">Jumpbrain</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
