@@ -17,7 +17,7 @@ params:
   homeInfoParams:
     Title: "BUILD | BREAK"
     Content: >-
-      Insights and tangents from data science, cybersecurity and trading.
+      Insights and tangents from data science, security and trading.
       My [Proton](mailto:00858854@proton.me) is open for questions.
   pygmentsUseClasses: false
 

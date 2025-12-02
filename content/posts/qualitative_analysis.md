@@ -1,7 +1,7 @@
 ---
 date: '2025-08-26T17:12:11+02:00'
 draft: false
-title: 'Data Scientist at War: Part 1'
+title: "Data Scientist at War: Part 1"
 description: 'A useful thought model.'
 tags: ["Useful thought model"]
 categories: ["Data Science"]
