@@ -1,0 +1,57 @@
+{{/*
+Shortcode: streamlit
+Usage:
+	{{< streamlit >}}
+	{{< streamlit url="https://keynesianbeautycontest.streamlit.app" height="600" >}}
+	{{< streamlit full="true" >}}
+If `url` is omitted, the shortcode falls back to `.Site.Params.beautyContest.streamlitUrl`.
+*/}}
+{{ $url := (.Get "url") | default .Site.Params.beautyContest.streamlitUrl }}
+{{ $height := (.Get "height") | default .Site.Params.beautyContest.iframeHeight }}
+{{ $full := (.Get "full") | default "false" }}
+{{ if eq (lower $full) "true" }}
+<style>
+	.streamlit-overlay {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.streamlit-overlay .sc-close {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		z-index: 10000;
+		background: #111;
+		color: #fff;
+		padding: 0.4rem 0.6rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-size: 0.875rem;
+	}
+
+	.streamlit-overlay iframe {
+		flex: 1;
+		border: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	body.hugo-streamlit-open {
+		overflow: hidden;
+		height: 100vh;
+	}
+</style>
+<div id="streamlit-overlay" class="streamlit-overlay">
+	<a class="sc-close" href="#" onclick="document.getElementById('streamlit-overlay').style.display='none';document.body.classList.remove('hugo-streamlit-open');return false;">Close</a>
+	<iframe src="{{ $url }}" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+</div>
+<script>document.body.classList.add('hugo-streamlit-open');</script>
+{{ else }}
+<div class="streamlit-embed" style="margin:0.5rem 0;">
+	<iframe src="{{ $url }}" height="{{ $height }}" style="width:100%;border:0;min-height:300px;" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+</div>
+{{ end }}
