@@ -46,12 +46,50 @@ If `url` is omitted, the shortcode falls back to `.Site.Params.beautyContest.str
 	}
 </style>
 <div id="streamlit-overlay" class="streamlit-overlay">
-	<a class="sc-close" href="#" onclick="document.getElementById('streamlit-overlay').style.display='none';document.body.classList.remove('hugo-streamlit-open');return false;">Close</a>
-	<iframe src="{{ $url }}" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+	<a class="sc-close" href="#" onclick="closeStreamlitOverlay();return false;">Close</a>
+	<div class="sc-fallback" style="display:none;padding:1rem;text-align:center;">
+		<p style="margin:.5rem 0">Embedding failed or is blocked (redirect/auth or frame restrictions).</p>
+		<a class="sc-open" href="{{ $url }}" target="_blank" rel="noopener" style="display:inline-block;padding:.5rem 0.75rem;background:#111;color:#fff;border-radius:4px;text-decoration:none">Open in new tab</a>
+	</div>
+	<iframe id="streamlit-iframe" src="{{ $url }}" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
 </div>
-<script>document.body.classList.add('hugo-streamlit-open');</script>
+<script>
+document.body.classList.add('hugo-streamlit-open');
+function closeStreamlitOverlay(){
+	const el=document.getElementById('streamlit-overlay');
+	if(el) el.style.display='none';
+	document.body.classList.remove('hugo-streamlit-open');
+}
+// ESC to close
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeStreamlitOverlay(); });
+// Fallback detection: if iframe doesn't fire load within timeout, show fallback
+(function(){
+	const iframe = document.getElementById('streamlit-iframe');
+	const fallback = document.querySelector('#streamlit-overlay .sc-fallback');
+	let loaded=false;
+	const timeoutMs = 6000;
+	function showFallback(){ if(fallback) fallback.style.display='block'; }
+	if(!iframe){ showFallback(); return; }
+	iframe.addEventListener('load', function(){ loaded=true; if(fallback) fallback.style.display='none'; });
+	window.setTimeout(function(){ if(!loaded) showFallback(); }, timeoutMs);
+})();
+</script>
 {{ else }}
 <div class="streamlit-embed" style="margin:0.5rem 0;">
-	<iframe src="{{ $url }}" height="{{ $height }}" style="width:100%;border:0;min-height:300px;" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+	<iframe id="streamlit-iframe" src="{{ $url }}" height="{{ $height }}" style="width:100%;border:0;min-height:300px;" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+	<div id="sc-inline-fallback" style="display:none;margin-top:.5rem;padding:.5rem;background:#f7f7f7;border-radius:6px;text-align:center;">
+		<div>Embedding may be blocked (redirects/auth or frame restrictions).</div>
+		<a href="{{ $url }}" target="_blank" rel="noopener" style="display:inline-block;margin-top:.5rem;padding:.4rem .6rem;background:#111;color:#fff;border-radius:4px;text-decoration:none">Open in new tab</a>
+	</div>
+	<script>
+		(function(){
+			const iframe = document.getElementById('streamlit-iframe');
+			const fallback = document.getElementById('sc-inline-fallback');
+			let loaded=false;
+			const timeoutMs=6000;
+			iframe.addEventListener('load', function(){ loaded=true; if(fallback) fallback.style.display='none'; });
+			window.setTimeout(function(){ if(!loaded && fallback) fallback.style.display='block'; }, timeoutMs);
+		})();
+	</script>
 </div>
 {{ end }}
