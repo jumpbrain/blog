@@ -21,7 +21,7 @@ params:
       My [Proton](mailto:00858854@proton.me) is open for questions.
   pygmentsUseClasses: false
   beautyContest:
-    streamlitUrl: "http://localhost:8501"
+    streamlitUrl: "https://keynesianbeautycontest.streamlit.app"
     iframeHeight: 800
 
  # icons shown under the header (and also available in the navbar)
