@@ -1,0 +1,22 @@
+{{- /* Site-level footer extensions to initialize KaTeX auto-render when math param is enabled */ -}}
+{{- if .Site.Params.math }}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement === 'function') {
+    try {
+      renderMathInElement(document.body, {
+        // delimiters for inline and display math
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '$', right: '$', display: false }
+        ],
+        throwOnError: false
+      });
+    } catch (e) {
+      /* ignore render errors */
+      console.warn('KaTeX render error', e);
+    }
+  }
+});
+</script>
+{{- end }}
